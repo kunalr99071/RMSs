@@ -1,0 +1,35 @@
+<h1>Tickets#new</h1>
+
+<%= form_with model:@ticket,url:{action: "create"} do |form| %>
+  <p>
+    <%= form.label :from%>*<br>
+    <%= form.text_field :from, value: @from %>
+  </p>
+
+   <p>
+    <%= form.label :to %>*<br>
+    <%= form.text_field :to , value: @to%>
+  </p>
+ 
+  <p>
+    <%= form.label :date %>*<br> 
+    <%= form.text_field :date, value: @date %>
+  </p>
+
+  <p>
+    <%= form.label :mobile %>*<br>
+    <%= form.text_field :mobile %>
+  </p>
+
+  <p>
+    <%= form.label :email %>*<br>
+    <%= form.text_field :email %>
+  </p>
+  <br>
+   <%= form.submit %>
+  </p>
+<% end %>
+  
+<br><br>
+<%= link_to "Home Page", root_path %>
+<br><br>

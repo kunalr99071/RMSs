@@ -1,0 +1,36 @@
+<h1>Passengers#new</h1>
+
+<%= form_with model:@passenger,url:{action: "create"} do |form| %>
+
+<h4>"Please complete all fields marked with *"</h4>
+  <p>
+    <%= form.label :name%>*<br>
+    <%= form.text_field :name %>
+  </p>
+
+   <p>
+    <%= form.label :age %>*<br>
+    <%= form.text_field :age %>
+  </p>
+ 
+  <p>
+    <%= form.label :mobile %>*<br> 
+    <%= form.text_field :mobile %>
+  </p>
+
+  <p>
+    <%= form.label :gender %>*<br>
+    <%= form.text_field :gender %>
+  </p>
+   <br>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br><br>
+<%= link_to "Home Page", root_path %>
+<br><br>
+
+
+

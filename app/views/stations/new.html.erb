@@ -1,0 +1,58 @@
+<h1>station#new</h1>
+
+<%= form_with model:@station, url:{action: "create"}  do |form| %>
+
+<h4>"Please complete all fields marked with *"</h4>
+
+ <%
+=begin%>
+ <% if @user.errors.any? %>
+    <div id="error_ex">
+        <ul style="list-style-type:none;">
+          <% @user.errors.full_messages.each do |msg|%>
+          <li style="color:red">*<%= msg %></li>
+          <%end%>
+        </ul>
+    </div>
+  <%end%>  
+<%
+=end%>
+
+
+
+  <p>
+    <%= form.label :station_name%>*<br>
+    <%= form.text_field :station_name %>
+  </p>
+
+   <p>
+    <%= form.label :arrival %>*<br>
+    <%= form.text_field :arrival %>
+  </p>
+ 
+  <p>
+    <%= form.label :departure %>*<br> 
+    <%= form.text_field :departure %>
+  </p>
+
+  <p>
+    <%= form.label :distance %>*<br>
+    <%= form.text_field :distance %>
+  </p>
+
+  <p>
+    <%= form.label :seats %>*<br>
+    <%= form.text_field :seats %>
+  </p>
+
+   <br>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br><br>
+<%= link_to "Home Page", root_path %>
+<br><br>
+
+

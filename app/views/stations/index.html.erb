@@ -1,0 +1,61 @@
+<h1>Stations#index</h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>route id</th>
+    </tr>
+  </thead>
+
+<style>
+
+*{
+  font-family: 'Courier New', monospace;
+
+}
+
+h1{
+  text-align:center;
+
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+  </style>
+  <tbody>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%=station.id%>
+        <td><%= station.station_name %></td>
+        <td><%=station.route_id%></td>
+      </tr>
+      
+    <% end %>
+     <%= link_to "route", root_path %>
+  </tbody>
+</table>
+
+
+

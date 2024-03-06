@@ -1,0 +1,95 @@
+<h1>Search Train</h1>
+
+<%= form_tag search_path do %>
+
+ <p>
+    <%= label_tag :date%>*<br>
+    <%= date_field_tag :date %>
+  </p>
+
+  <p>
+    <%= label_tag :from%>*<br>
+    <%= text_field_tag :from %>
+  </p>
+
+  <p>
+    <%= label_tag :to%>*<br>
+    <%= text_field_tag :to %>
+  </p>
+
+   <br>
+  <p>
+    <%= submit_tag "Search Train"%>
+  </p>
+<% end %>
+
+<br><br><br>
+
+<h1> PNR </h1>
+
+<%= form_tag pnr_path do %>
+  <p>
+    <%= label_tag :pnr%>*<br>
+    <%= text_field_tag :pnr %>
+  </p>
+ <br>
+  <p>
+    <%= submit_tag "Search"%>
+  </p>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%
+=begin%>
+ 
+<br><br>
+
+    <% @routes.each do |route| %>
+       <%= link_to "new route", new_route_path %>
+       <br> <br><br>
+      <%= link_to "add stations", new_route_station_path(route) %>
+      <br><br><br>
+       <%= link_to "search train", search_path(route)%>
+    <% end %>
+ 
+   <br><br><br> 
+<%
+=end%>
+
+<%
+=begin%>
+ 
+<%from = "indore"%>
+<%to = "bhopal"%>
+<%@routes.each do |route|%>
+  <%station = route.stations.pluck(:station_name)%>
+  <%station%>
+  <%if station.include?(from) && station.include?(to)%>
+  <h4> available Train </h4>
+    <%=route.id%>
+    <%=route.name%>
+  <%else%>
+    <p>No Train Available</p>
+  <%end%>
+<%end%> 
+<%
+=end%>
+
+
+
+
+

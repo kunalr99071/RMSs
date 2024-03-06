@@ -1,0 +1,9 @@
+<%@route= Route.first%>
+<%station = Array.new%>
+<%st = @route.stations%>
+<%st.each do |st|%>
+<%station << st.station_name%>
+<%end%>
+
+<%=station%>
+
